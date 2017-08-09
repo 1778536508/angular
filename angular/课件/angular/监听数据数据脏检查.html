@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angular.js" ></script>
+	</head>
+	<body>
+		<div ng-controller="box">
+			<!--<input type="button" value="点击" ng-click="a=1"/>-->
+			{{a}}
+		</div>
+	</body>
+</html>
+<script>
+	var app=angular.module('app',[]);
+	app.controller('box',function($scope){
+		$scope.a=12121;
+		setTimeout(function(){
+			$scope.$apply(function(){
+				$scope.a=1;
+			});
+		},1000);
+	});
+</script>

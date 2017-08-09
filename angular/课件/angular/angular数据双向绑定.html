@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/angular.js"></script>
+	</head>
+	<body>
+		<!--<input type="text" ng-model="a" />
+		{{a}}-->
+		
+		<div ng-init="arr=[1,2,3,4]">
+			<input type="button" value="变" ng-click="arr=[1]" />
+			{{arr}}
+			<ul>
+				<li ng-repeat="v in arr">{{v}}</li>
+			</ul>
+			
+		</div>
+	</body>
+</html>
+<script>
+	
+</script>

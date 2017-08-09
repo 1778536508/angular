@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="Myname">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="angular.js"></script>
+	</head>
+	<body>
+		<div class="box">
+			<!--作为属性使用-->
+			<ng-link></ng-link>
+			<!--作为元素名使用-->
+			<!--<div ngLink>div</div>-->
+			<!--作为类名使用-->
+			<!--<div class="ng-link"></div>-->
+			
+			
+			<!--作为注释使用-->
+			 <!--directive: ng-link--> 
+			
+		</div>
+		<script type="text/javascript">
+			var app = angular.module('Myname',[]);
+//			app.controller('name',function($scope,$http){
+//				$http.get('data.json').success(function(res){
+//					
+//				}
+//			})
+			app.directive('ngLink',function(){
+				return{
+//					restrict 值可以是以下几种:
+//					E 作为元素名使用
+//					A 作为属性使用
+//					C 作为类名使用
+//					M 作为注释使用
+//					restrict 默认值为 EA, 即可以通过元素名和属性名来调用指令
+					restrict:'EACM',
+					templateUrl:'template.html'
+				}
+			})
+			
+		</script>
+	</body>
+</html>
+

@@ -1,0 +1,30 @@
+{
+	"list":[{
+			"tubiao":"i1.jpg",
+			"text":"楼盘查"
+			},{
+			"tubiao":"i2.jpg",
+			"text":"帮你找"
+			},{
+			"tubiao":"i3.jpg",
+			"text":"咨询师"
+			},{
+			"tubiao":"i4.jpg",
+			"text":"品牌升"
+			},{
+			"tubiao":"i5.jpg",
+			"text":"成交故"
+			},{
+			"tubiao":"i6.jpg",
+			"text":"买房子"
+			},{
+			"tubiao":"i7.jpg",
+			"text":"情报局"
+			},{
+			"tubiao":"i8.jpg",
+			"text":"下载"
+			}],
+	"title":{
+			"区域":["房山","大兴门头沟顺义通州丰台朝阳昌平西城石景山东城海淀密云"]
+	}		
+}

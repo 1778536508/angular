@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- angular里面内置一个类似于jquery的一个库(不是所有的jquery功能都能用) -->
+    <script type="text/javascript" src="angularjs\angular.js"></script>
+  </head>
+  <body>
+    <div class="box">
+      <input type="text" ng-model="app">
+      <p><a href="javascript:;" ng-click="app=456">{{app}}</a></p>
+      <h1 >123</h1>
+    </div>
+
+
+    <div class="box2" ng-init="arr=[1,2,3,4]">
+      <ul>
+        <li ng-repeat="val in arr">{{val}}</li>
+      </ul>
+
+
+  </body>
+</html>
+<script type="text/javascript">
+    // angular.isArray  判断是否是一个数组
+    // angular.isDate   判断是否是一个时间对象
+   angular.element(document).ready(function(){
+           var oDiv = document.querySelector('h1');
+           angular.element(oDiv).css('background','red');
+           var arr = [1,2,3,4];
+           angular.forEach(arr,function(val,key){
+             console.log(val+':'+key);
+           })
+           var jsonD = {a:1,b:2};
+           angular.forEach(jsonD,function(val,key){
+             console.log(key+':'+val);
+           })
+   })
+
+</script>

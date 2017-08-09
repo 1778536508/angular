@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angular.js" ></script>
+	</head>
+	<body>
+		<div ng-controller="box">
+			{{w | getDate:'big'}}
+		</div>
+	</body>
+</html>
+<script>
+	var app=angular.module('app',[]);
+	app.filter('getDate',function(){
+		return function(str){
+			return str.charAt(0).toUpperCase()+str.substring(1);
+		}
+	});
+	app.controller('box',function($scope){
+		$scope.w='aa bb cc dd';
+	});
+</script>

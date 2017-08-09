@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="Myname">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="angular.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div ng-controller="name">
+			{{a | getDate:'big'}}
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var app = angular.module('Myname',[]);
+	app.filter('getDate',function(){
+		//str是内容      ce是过滤器的方法
+		return function(str,ce){
+			var oDate = new Date();
+			//将当前的时间戳设置内容的时间戳
+			oDate.setTime(str);
+			if(ce === 'big'){
+			    var arr = ['日','一','二','三','四','五','六'];
+			    return '星期'+arr[oDate.getDay()];
+			}else{
+			    return '星期'+oDate.getDay();
+			}
+		}
+	})
+	app.controller('name',function($scope){
+		//获取当前的时间戳
+		$scope.a = Date.now();
+	})
+	
+</script>

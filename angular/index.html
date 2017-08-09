@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="Myname">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="angular.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body ng-controller="name">
+		
+		<p ng-click="a=456">{{a}}</p>
+		
+		<script type="text/javascript">
+			var app = angular.module('Myname',[]);
+			app.controller('name',function($scope){
+				$scope.a = 123;
+			})
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angular.js" ></script>
+	</head>
+	<body>
+		<div ng-controller="box">
+			{{a|toFixed:5}}
+			
+		</div>
+		<ol change-color>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ol>
+	</body>
+</html>
+<script>
+	//angular.module('模块名',[依赖模块],配置函数)
+	var app=angular.module('app',[],function(
+		$controllerProvider,
+		$filterProvider,
+		$compileProvider
+	){
+		//创建控制器
+		$controllerProvider.register('box',function($scope){
+			$scope.a=12.333366666;
+		});
+		//创建过滤器
+		$filterProvider.register('toFixed',function(){
+			return function(val,n){
+				return val.toFixed(n);
+			}
+		});
+		//自定义指令
+		$compileProvider.directive('changeColor',function(){
+			return {
+				link:function(scope,ele,attr){
+					angular.forEach(ele.children(),function(val,index){
+						if(index%2){
+							angular.element(val).css('background','red');
+						}else{
+							angular.element(val).css('background','yellow');
+						}
+					});
+				}
+			}
+		});
+	});
+
+//	app.controller('box',['$scope',function(a){
+//		a.a=12;
+//	}]);
+</script>

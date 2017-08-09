@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angular.js" ></script>
+	</head>
+	<body>
+		<div ng-controller="box">
+			<div bi-purple id="asas">
+				12211221
+			</div>
+			<P bi-purple>12211212</p>
+		</div>
+	</body>
+</html>
+<script>
+	var app=angular.module('app',[]);
+	app.directive('biPurple',function(){
+		return function(scope,element,attr){
+			element.css('background','purple');
+		};
+	});
+	app.controller('box',function($scope){
+		
+	});
+</script>

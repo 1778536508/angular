@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="Myname">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="angular.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		
+		<div ng-controller="name">
+			{{a}}
+		</div>
+		
+	</body>
+</html>
+<script type="text/javascript">
+	
+	//在公司写项目的时候必须这么写      以便于打包
+	var app = angular.module('Myname',[]);
+	app.controller('name',['$scope',function(res){
+		res.a = 123;
+	}])
+	
+	
+</script>

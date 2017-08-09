@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/angular.js"></script>
+	</head>
+	<body>
+		<div id="box" ng-controller="show">
+			{{a}}
+		</div>
+		<div ng-controller="show2">
+			{{a}}
+		</div>
+	</body>
+</html>
+<script>
+	//多个控制器
+		//1.可以继承  （看dom结构）
+		//2.可以传递数据
+				//子级给父级传递数据
+					//$scope.$emit('数据名称',数据);
+				//父级给子级传递数据
+					//$scope.$broadcast('数据名称',数据)
+			//接收数据://$scope.$on(数据名称,function(event,data){data});
+	//angular.module('模块名',[依赖模块],配置函数)
+	var app=angular.module('app',[]);
+	//依赖注入      不关心参数顺序
+	app.controller('show',function($scope){
+		$scope.a=12;
+	});
+	app.controller('show2',function($scope){
+		$scope.a='show2'+12;
+	});
+</script>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="Myname">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="angular.js"></script>
+	</head>
+	<body>
+		<div ng-controller="name">
+			<div ng-link>
+				123
+			</div>
+			
+		</div>
+		
+	</body>
+</html>
+<script type="text/ng-template" id="temp.html">
+	<div>
+		<p ng-transclude></p>
+		<div>456</div>
+	</div>
+</script>
+<script type="text/javascript">
+	var app = angular.module('Myname',[]);
+	app.directive('ngLink',function(){
+		return{
+			restrict:'EACM',
+			//ng-transclude是將指令里面的标签引入到该标签中    若不加标签则自定生成一个span标签并带有class="ng-scope";
+			templateUrl:'temp.html',
+			//是否引入
+			transclude:true,
+			//是否将template的最外层标签删除
+			replace:true,
+			link:function(scope,element,attr){
+				element.css('background','red');
+			}
+		}
+	})
+
+	app.controller('name',function($scope){})
+			
+</script>
+

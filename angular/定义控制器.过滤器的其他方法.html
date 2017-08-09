@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html ng-app="Myname">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="angular.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		
+		<div ng-controller="name">
+			{{a | toFixed:2}}
+			<p>{{b}}</p>
+			<p>{{c}}</p>
+			<ol ng-link>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ol>
+		</div>
+		
+		
+	</body>
+</html>
+<script type="text/javascript">
+	
+	// angular.module('模块名',[依赖模块],配置函数)                                    
+	var app = angular.module('Myname',[],function(	
+		$controllerProvider,               //定义控制器
+		$filterProvider,				   //定义过滤器
+		$compileProvider,				   //定义自定义指令
+		$provide						   //自定义服务
+		){                              
+		//创建控制器
+		$controllerProvider.register('name',function($scope,fs,as){
+			$scope.a = 456.123;
+			$scope.b = fs.c;
+			$scope.c = as.d;
+		});
+
+		//创建过滤器
+		$filterProvider.register('toFixed',function(){
+			return function(val,n){
+				return val.toFixed(n);
+			}
+		});
+		
+		//创建自定义指令
+		$compileProvider.directive('ngLink',function(){
+			return{
+				link:function(scope,ele,attr){
+					angular.forEach(ele.children(),function(val,index){
+						if(index%2){	
+							angular.element(val).css('background','mediumvioletred');
+						}else{
+							angular.element(val).css('background','aqua');
+						}
+					})
+				}
+			}
+		});
+		
+		//自定义服务    工厂模式
+		$provide.factory('fs',function(){
+			return {
+				a:1,
+				b:2,
+				c:3
+			}
+		})
+		//自定义服务    构造模式
+		$provide.service('as',function(){
+			this.a = 123;
+			this.d = 456;
+		})
+	});
+
+	
+	
+</script>

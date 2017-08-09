@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angular.js" ></script>
+	</head>
+	<body>
+		<div ng-controller="box">
+			{{a}}
+		</div>
+	</body>
+</html>
+<script>
+	var app=angular.module('app',[]);
+	app.controller('box',['$scope',function(a){
+		a.a=12;
+	}]);
+</script>

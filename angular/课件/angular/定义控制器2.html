@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angular.js" ></script>
+	</head>
+	<body>
+		<div ng-controller="box">
+			{{a}}
+		</div>
+	</body>
+</html>
+<script>
+	//angular.module('模块名',[依赖模块],配置函数)
+//	var app=angular.module('app',[],function($controllerProvider){
+//		$controllerProvider.register('box',function($scope){
+//			$scope.a=12;
+//		});
+//	});
+	var app=angular.module('app',[],['$controllerProvider',function(a){
+		a.register('box',['$scope',function(b){
+			b.a=12;
+		}]);
+	}]);
+
+//	app.controller('box',['$scope',function(a){
+//		a.a=12;
+//	}]);
+</script>

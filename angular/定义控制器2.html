@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="Myname">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="angular.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		
+		<div ng-controller="name">
+			{{a}}
+		</div>
+		
+	</body>
+</html>
+<script type="text/javascript">
+	
+	// angular.module('模块名',[依赖模块],配置函数)
+	//控制器的第二种写法    这种写法不能压缩
+//	var app = angular.module('Myname',[],function($controllerProvider){
+//		$controllerProvider.register('name',function($scope){
+//			$scope.a = 456;
+//		});
+//	});
+	//控制器的第二种写法    这种写法可以压缩
+	var app = angular.module('Myname',[],['$controllerProvider',function(a){
+		a.register('name',['$scope',function(b){
+			b.a = 789;
+		}])
+	}]);
+	//第一种写法   可以压缩
+//	app.controller('name',['$scope',function(res){
+//		res.a = 123;
+//	}])
+	
+	
+</script>

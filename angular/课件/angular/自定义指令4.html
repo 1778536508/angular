@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div ng-controller="box">
+			<div bi-purple id="asas">
+				12212112
+				<p>很少说话</p>
+			</div>
+			<P bi-purple></p>
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="js/angular.js" ></script>
+<script type="text/ng-template" id="tmp.html">
+	<ul>
+		<li>首页</li>
+		<li>首页</li>
+		<li>首页</li>
+		<li>首页</li>
+	</ul>
+</script>
+<script>
+	var app=angular.module('app',[]);
+	app.directive('biPurple',function(){
+//		return function(scope,element,attr){
+//			element.css('background','purple');
+//		};
+		return {
+			//E element  元素
+			//C  class   样式
+			//M   comment  注释
+			//A   attrribute   属性
+			restrict:'ECMA',//
+			//template:'<div><div ng-transclude></div><h1>好哈哈</h1></div>',
+			templateUrl:'tmp.html',
+			transclude:true,//包裹之前的代码
+			replace:false,
+			link:function(scope,element,attr){
+				element.css('background','purple');
+			}
+		}
+	});
+	app.controller('box',function($scope){
+		
+	});
+</script>

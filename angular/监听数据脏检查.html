@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="Myname">
+	<head>
+		<meta charset="UTF-8">
+		<title>过多少时间后脏检查监听数据变化</title>
+		<script src="angular.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div ng-controller="name">
+			{{a}}
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	
+	var app = angular.module('Myname',[]);
+	//普通时间  数据监听
+	app.controller('name',function($scope){
+		$scope.a = 123; 
+		setInterval(function(){
+			$scope.$apply(function(){
+				$scope.a = 456;
+			})
+		},1000);
+	})
+	//自带属性时间监听
+//	app.controller('name',function($timeout,$scope){
+//		$scope.a = 123; 
+//		$timeout(function(){
+//				$scope.a = 456;
+//		},1000)
+//	})
+	
+	
+	
+</script>

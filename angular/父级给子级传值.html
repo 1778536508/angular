@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="Myname">
+  <head>
+    <meta charset="utf-8">
+    <title>控制器</title>
+    <script type="text/javascript" src="angular.js"></script>
+  </head>
+  <body>
+    <div ng-controller="name1">
+     	<input type="button"  value="点击" ng-click="btu()"/>
+        {{a}}
+			<div ng-controller="name2">
+	        {{a}}
+	    </div> 
+    </div>
+
+  </body>
+</html>
+<script type="text/javascript">
+
+//多个控制器
+	//1.可以继承（看deom结构）
+	//2.子级给父级传递数据     
+					//$scope.$emit('数据名称','数据')
+	//3.父级给子级传递数据
+					//$scope.$broadcast('数据名称','数据')
+	//接收数据：//$scope.$on(数据名称,function(event,data){data})
+
+var app=angular.module("Myname",[]);
+//父级
+  app.controller("name1",function($scope,$http){
+				$scope.a = '数据1';
+				$scope.btu = function(){
+					$scope.$broadcast('data',$scope.a);    //数据发送
+				}		
+  })
+//子级
+  app.controller("name2",function($scope,$http){
+				$scope.a = '数据2';
+				$scope.$on('data',function(event,data){
+					$scope.a += data;
+				})
+  })
+
+
+</script>

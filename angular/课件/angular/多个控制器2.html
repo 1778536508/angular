@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/angular.js"></script>
+	</head>
+	<body>
+		<div ng-controller="aaa">
+			{{a}}
+			<div ng-controller="bbb">
+				<input type="button" value="咻咻咻" ng-click="c()" />
+				{{a}}
+			</div>
+		</div>
+	</body> 
+</html>
+<script>
+	var app=angular.module('app',[]);
+	
+	app.controller('aaa',function($scope){
+		//$scope.a=12;
+		$scope.$on('data',function(event,data){
+			$scope.a=data+'aaa';
+		});
+	});
+	app.controller('bbb',function($scope){
+		$scope.a='bbb'+12;
+		$scope.c=function(){
+			$scope.$emit('data',$scope.a);//数据发射出去
+		};
+	});
+</script>

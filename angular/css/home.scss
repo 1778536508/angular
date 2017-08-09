@@ -1,0 +1,320 @@
+@charset "utf-8";
+*{
+    box-sizing: border-box;  
+    font-family: "微软雅黑";  
+}
+%full{
+    width: 100%;
+    height: 100%;
+}
+@mixin pos($p:absolute){
+    position: $p;
+}
+@mixin clearfix{
+    zoom: 1;
+    &:after{
+      display: block;
+      clear: both;
+      content: '';
+    }
+}
+html,body,.box{
+    @extend %full;
+}
+.head{
+    width: 100%;
+    height: 15rem;
+    background: url(../img/banner.png);
+    background-size:100% 100%;
+    padding-top: 3rem;
+    h1{
+        font-size: 2rem;
+        color: white;
+        text-align: center; 
+    }
+    header{
+        width: 100%;
+        height: 3.5rem;
+        margin-top: 3rem;
+        @include pos(relative);
+        padding: 0 4rem 0 1rem;
+        .left{
+            font-size: 1rem;
+            color: #3A3837;
+            @include pos();
+            left: 3rem;
+            top: 0.6rem;
+            display: inline-block;
+            border-right:1px solid #D5D2D0 ;
+            padding-right: 0.5rem;
+            span{
+                font-size: 0.5rem;
+                color: #939291;
+            }
+        }
+        input{
+            width: 100%;
+            height: 2.5rem;
+            background: rgba(255,255,255,0.8);
+            outline: none;
+            border: none;
+            border-radius: 2.5rem;
+            padding-left: 7rem;
+        }
+        .right{
+            @include pos();
+            right: 5rem;
+            top: 0.8rem;
+            font-size: 1rem;
+            color: #AFAEAD;
+        }
+        .user{
+            @include pos();
+            right: 1rem;
+            top: 0;
+            display: block;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 2.5rem;
+            background: rgba(255,255,255,0.8);
+            text-align: center;
+            line-height: 2.5rem;  
+            span{
+                font-size: 1rem;
+                color: #AFAEAD;
+            }
+        }
+    }
+    .list{
+        width: 100%;
+        padding: 0 1rem;
+        ul{
+            width: 100%;
+            background: white;
+            @include clearfix;
+            border-radius: 1rem;
+            padding-top: 1rem;
+            padding-bottom: 2rem;
+            box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+            li{
+                float: left;
+                width: 25%;
+                text-align: center;
+                margin-top: 1rem;
+                a{
+                    display: block;
+                    width: 3rem;
+                    height: 3rem;
+                    margin: 0 auto;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                span{
+                    display: block;
+                    font-size: 1rem;
+                    margin-top: 0.5rem;
+                }
+            }
+        }
+    }
+}
+.content{
+    width: 100%;
+    margin-top: 12rem;
+    .loso{
+        width: 100%;
+        height: 3rem;
+        @include clearfix;
+        margin-top: 0.5rem;
+        p{
+            float: left;
+        }
+        p:nth-child(1){
+            border-right:1px solid #DDDDDD;
+            width: 20%;
+            height: 100%;
+            padding-left: 1rem;
+            img{
+                width: 3rem;
+                height: 2.5rem;
+            }
+        }   
+        p:nth-child(2){
+            padding-right: 1rem;
+            padding-left: 1rem;
+            font-size: 1rem;
+            width: 80%;
+            height: 100%;
+            overflow: hidden;
+        }
+    }
+    .con_list{
+        width: 100%;
+        padding: 1rem;
+        .kuai{
+            font-size: 2rem;
+            color: #333333;
+            margin-top: 1rem;
+        }
+        &>div{
+            width: 100%;
+            height: 2rem;
+//          border: 1px solid;
+            @include clearfix;
+            overflow: hidden;
+            margin-top: 1rem;
+            @include pos(relative);
+            
+            p{
+                float: left;
+                width: 15%;
+                height: 100%;
+                font-size: 1rem;
+                color: #666666;
+                margin-top: 0.2rem;
+            }
+            ul{
+                height: 100%;
+                width: 85%;
+                float: left;
+                @include clearfix;
+                padding-right: 4rem;
+                line-height: 2rem;
+                li{
+                    float: left;
+                    font-size: 1rem;
+                    color: #333333;
+                    margin-left: 1rem;
+                }
+            }
+            .clik{
+                display: block;
+                width: 2rem;
+                height: 1rem;
+                border: 1px solid #E5E5E5;
+                text-align: center;
+                line-height: 1rem;
+                @include pos();
+                right: 1rem;
+                top: 0.5rem;
+                span{
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+    
+    .list_2{
+        width: 100%;
+        padding: 0 1rem;
+        ul{
+            width: 100%;
+            @include clearfix;
+            li{
+                float: left;
+                width: 25%;
+                padding-right: 2rem;
+                margin-top: 0.5rem;
+                a{
+                   display: block;
+                   padding: 0.5rem;
+                   border: 1px solid;
+                   border-radius: 0.1rem;
+                   border: 1px solid red;
+                }
+            }
+        }
+    }
+    
+    .neirong{
+        width: 100%;
+        .tui{
+            font-size: 2rem;
+            color:#333333 ;
+            margin-left: 0.5rem;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        ul{
+            width: 100%;
+            li{
+                width: 100%;
+                @include clearfix;
+                padding: 0.5rem;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+                border-bottom: 1px solid #E5E5E5;
+                &>div{
+                    float: left;
+                    &:nth-child(1){
+                        width: 7rem;
+                        height: 7rem;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                        }
+                        
+                    }
+                    &:nth-child(2){
+                        margin-left: 0.5rem;
+                        p{
+                            font-size: 1.2rem;
+                            color: #666666;
+                            margin-top: 0.5rem;
+                            &:nth-child(1){
+                                font-size: 2rem;
+                                margin-top: -0.5rem;
+                            }
+                            span{
+                                font-size: 1.2rem;
+                                font-weight: bold;
+                                color: #FF6D6F;
+                                margin-left: 4rem;
+                                img{
+                                    margin-left: -3rem;
+                                    width: 6rem;
+                                    height: 1.5rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .look{
+        width: 100%;
+        height: 3rem;
+        line-height: 3rem;
+        p{
+            font-size: 1.2rem;
+            color: #666666;
+            text-align: center;
+            
+        }
+    }
+    
+    
+}
+footer{
+    width: 100%;
+    height: 4rem;
+    background: #464754;
+    @include pos(relative);
+    padding: 0.5rem;
+    p{
+        font-size: 1rem;
+        color: #878787;
+    }
+    a{
+        font-size: 1rem;
+        @include pos();
+        right: 1rem;
+        top: 1rem;
+        color: #878787;
+        text-decoration: underline;
+    }
+}

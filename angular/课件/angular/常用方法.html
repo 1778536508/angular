@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>angular操作元素</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+		</style>
+		<script type="text/javascript" src="js/angular.js" ></script>
+	</head>
+	<body>
+		angular里面内置一个类似于jq的库（不是所有的jq功能都有）
+		<div class="box">11212</div>
+	</body>
+</html>
+<script>
+	//angular.isArray()
+	//angular.isDate()
+	
+	angular.element(document).ready(function(){
+		//var arr=[1,2,4];
+		var json={a:1,b:2};
+		angular.forEach(json,function(v,k){
+			alert(k);
+		});
+	});
+</script>

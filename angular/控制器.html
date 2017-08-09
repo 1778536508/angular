@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="Myname">
+  <head>
+    <meta charset="utf-8">
+    <title>控制器</title>
+    <script type="text/javascript" src="angular.js"></script>
+  </head>
+  <body>
+     <div ng-controller="name" ng-click="a=789">
+        {{a}}
+    </div> 
+
+
+  </body>
+</html>
+<script type="text/javascript">
+
+// angular.module('模块名',[依赖模块],配置函数)
+var app=angular.module("Myname",[]);
+//依赖注入   不关心参数顺序
+  app.controller("name",function($scope,$http){
+  	$scope.a = 456;
+      $http.get("data.json").success(function(data){
+          console.log(data)
+      })
+  })
+
+
+</script>

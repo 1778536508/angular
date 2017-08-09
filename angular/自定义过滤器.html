@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="Myname">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="angular.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div ng-controller="name">
+			{{a | worldCase}}
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var app = angular.module('Myname',[]);
+	app.filter('worldCase',function(){
+		return function(str){
+			return str.charAt(0).toUpperCase()+str.substring(1);
+		}
+	})
+	app.controller('name',function($scope){
+		$scope.a = 'niedongye';
+	})
+	
+</script>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="Myname">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="angular.js"></script>
+	</head>
+	<body>
+		<div ng-controller="name">
+			<div ng-link>
+				123
+			</div>
+			
+		</div>
+		<script type="text/javascript">
+			var app = angular.module('Myname',[]);
+
+			app.directive('ngLink',function(){
+				return function(scope,element,attr){
+					element.css('background','red');
+				}
+			})
+			
+			app.controller('name',function($scope){
+				
+			})
+			
+		</script>
+	</body>
+</html>
+
